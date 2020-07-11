@@ -31,8 +31,8 @@ import (
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
 	Use:   "awschain",
-	Short: "awschain is set cuurent AWS~ environment varibales to envchain namespace",
-	Long: `awschain is set cuurent AWS~ environment varibales to envchain namespace
+	Short: "awschain is set cuurent AWS* environment varibales to envchain namespace",
+	Long: `awschain is set cuurent AWS* environment varibales to envchain namespace
 examples and usage of using your application. 
 
 For example:
