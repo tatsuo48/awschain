@@ -16,6 +16,7 @@ limitations under the License.
 package cmd
 
 import (
+	"errors"
 	"fmt"
 	"log"
 	"os"
@@ -38,9 +39,15 @@ examples and usage of using your application.
 For example:
 awschain [envchain NAMESPACE]`,
 
-	Run: func(cobra_cmd *cobra.Command, args []string) {
+	RunE: func(cobra_cmd *cobra.Command, args []string) error {
+		if len(args) != 1 {
+			return errors.New("requires only one envchain NAMESPACE")
+		}
 		namespace := args[0]
-		awsEnvs := fetchAwsEnvs()
+		awsEnvs, err := fetchAwsEnvs()
+		if err != nil {
+			return err
+		}
 		c, err := expect.NewConsole(expect.WithStdout(os.Stdout))
 		if err != nil {
 			log.Fatal(err)
@@ -70,11 +77,11 @@ awschain [envchain NAMESPACE]`,
 		if err != nil {
 			log.Fatal(err)
 		}
-
+		return nil
 	},
 }
 
-func fetchAwsEnvs() []string {
+func fetchAwsEnvs() ([]string, error) {
 	awsEnvs := []string{}
 	for _, pair := range os.Environ() {
 		r := regexp.MustCompile(`AWS`)
@@ -82,7 +89,10 @@ func fetchAwsEnvs() []string {
 			awsEnvs = append(awsEnvs, strings.Split(pair, "=")[0])
 		}
 	}
-	return awsEnvs
+	if len(awsEnvs) == 0 {
+		return nil, errors.New("AWS* environmet variable is not found")
+	}
+	return awsEnvs, nil
 }
 
 // Execute adds all child commands to the root command and sets flags appropriately.
