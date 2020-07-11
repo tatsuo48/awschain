@@ -8,6 +8,11 @@ https://github.com/sorah/envchain
 If you are using AWS SSO, envchain configuration updates will occur frequently.  
 This tool will help you update your envchain configuration.
 
+## Installing
+```
+go get -u github.com/tatsuo48/awschain
+```
+
 ## Usage
 ```bash
 # Set AWS Credentials in your terminal
