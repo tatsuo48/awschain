@@ -70,7 +70,6 @@ awschain [envchain NAMESPACE]`,
 
 		for _, key := range awsEnvs {
 			time.Sleep(time.Second)
-			fmt.Println(os.Getenv(key))
 			c.Send(fmt.Sprintf("%s\n", os.Getenv(key)))
 		}
 		err = cmd.Wait()
