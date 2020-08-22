@@ -1,6 +1,6 @@
 # awschain
 
-awschain is set cuurent AWS* environment varibales to envchain namespace.  
+awschain is set current AWS* environment variables to envchain namespace.  
 
 envchain is here.  
 https://github.com/sorah/envchain
