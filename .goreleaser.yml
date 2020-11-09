@@ -26,3 +26,14 @@ archives:
         format: zip
 release:
   prerelease: auto
+
+brews:
+- tap:
+    owner: tatsuo48
+    name: homebrew-tap
+  folder: Formula
+  homepage: https://github.com/tatsuo48/awschain
+  description: awschain is set current AWS* environment variables to envchain namespace.
+  skip_upload: auto
+  test: |
+    system "#{bin}/awschain", "-h"
