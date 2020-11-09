@@ -10,7 +10,7 @@ builds:
     ldflags: 
       - -s -w
       - -X github.com/tatsuo48/awschain/cmd.Version={{.Version}}
-      - -X github.com/tatsuo48/awschain/cmd.BuildSHA={{.ShortCommit}}
+      - -X github.com/tatsuo48/awschain/cmd.Revision={{.ShortCommit}}
     env:
       - CGO_ENABLED=0
 archives:
