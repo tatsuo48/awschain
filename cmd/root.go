@@ -37,7 +37,7 @@ var (
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
-	Version: fmt.Sprintf("%s -- %s\n", Version, Revision),
+	Version: fmt.Sprintf("%s -- %s", Version, Revision),
 	Use:     "awschain",
 	Short:   "awschain is set cuurent AWS* environment varibales to envchain namespace",
 	Long: `awschain is set cuurent AWS* environment varibales to envchain namespace

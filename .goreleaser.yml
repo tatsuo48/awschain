@@ -36,4 +36,4 @@ brews:
   description: awschain is set current AWS* environment variables to envchain namespace.
   skip_upload: auto
   test: |
-    system "#{bin}/awschain", "-h"
+    system "#{bin}/awschain", "-v"
