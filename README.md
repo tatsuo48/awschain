@@ -3,17 +3,25 @@
 awschain is set current AWS* environment variables to envchain namespace.  
 
 envchain is here.  
-https://github.com/sorah/envchain
+[envchain](https://github.com/sorah/envchain)
 
 If you are using AWS SSO, envchain configuration updates will occur frequently.  
 This tool will help you update your envchain configuration.
 
 ## Installing
-```
+
+```bash
 go get -u github.com/tatsuo48/awschain
 ```
 
+or
+
+```bash
+brew install tatsuo48/tap/awschain
+```
+
 ## Usage
+
 ```bash
 # Set AWS Credentials in your terminal
 $ export AWS_ACCESS_KEY_ID="XXXXXXXXXXXXXXX"
@@ -34,6 +42,7 @@ $ awschain test-account
 ```
 
 Run in another terminal
+
 ```bash
 $ envchain test-account aws s3 ls
 2020-05-16 21:00:52 test-bucket1
