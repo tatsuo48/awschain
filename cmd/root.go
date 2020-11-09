@@ -29,10 +29,17 @@ import (
 	"github.com/spf13/cobra"
 )
 
+// These variables are set in build step
+var (
+	Version  = "unset"
+	Revision = "unset"
+)
+
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
-	Use:   "awschain",
-	Short: "awschain is set cuurent AWS* environment varibales to envchain namespace",
+	Version: fmt.Sprintf("%s -- %s\n", Version, Revision),
+	Use:     "awschain",
+	Short:   "awschain is set cuurent AWS* environment varibales to envchain namespace",
 	Long: `awschain is set cuurent AWS* environment varibales to envchain namespace
 examples and usage of using your application. 
 

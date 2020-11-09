@@ -9,8 +9,8 @@ builds:
     binary: awschain
     ldflags: 
       - -s -w
-      - -X main.Version={{.Version}}
-      - -X main.Revision={{.ShortCommit}}
+      - -X github.com/tatsuo48/awschain/cmd.Version={{.Version}}
+      - -X github.com/tatsuo48/awschain/cmd.BuildSHA={{.ShortCommit}}
     env:
       - CGO_ENABLED=0
 archives:
