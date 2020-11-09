@@ -17,6 +17,12 @@ package main
 
 import "github.com/tatsuo48/awschain/cmd"
 
+// These variables are set in build step
+var (
+	Version  = "unset"
+	Revision = "unset"
+)
+
 func main() {
 	cmd.Execute()
 }
